@@ -1,14 +1,16 @@
 import _ from "lodash";
-import './style.css';
+import './style.sass';
 
 function component() {
-  let element = document.createElement('div');
+  let containerElement = document.createElement('div');
+  containerElement.classList.add('container');
 
-  // Lodash
+  let element = document.createElement('div');
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
   element.classList.add('hello');
 
-  return element;
+  containerElement.appendChild(element);
+  return containerElement;
 }
 
 document.body.appendChild(component());
