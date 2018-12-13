@@ -1,10 +1,10 @@
-import _ from "lodash";
+import { cube } from './math.js';
 import printMe from './print.js';
 import './style.sass';
 import Icon from './build.svg';
 
 function component() {
-  let containerElement = document.createElement('div');
+  let containerElement = document.createElement('pre');
   containerElement.classList.add('container');
 
   var btn = document.createElement('button');
@@ -13,7 +13,7 @@ function component() {
   containerElement.appendChild(btn);
 
   let element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = ['Hello', 'webpack'].join('\n\n');
   element.classList.add('hello');
 
   let icon = new Image();
