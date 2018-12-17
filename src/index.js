@@ -3,12 +3,11 @@ import printMe from './print.js';
 import './style.sass';
 import Icon from './build.svg';
 
-function getCmponent() {
-  return import(/* webpackChunkName: "lodash" */ 'lodash').then(({ default: _ }) => {
-    var element = document.createElement('div');
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    return element;
-  }).catch(error => 'An error occured while loading the component');
+async function getCmponent() {
+  var element = document.createElement('div');
+  const { default: _ } = await import(/* webpackChunkName: "lodash" */ 'lodash');
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  return element;
 }
 
 getCmponent().then(component => {
