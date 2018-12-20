@@ -1,4 +1,4 @@
-import _ from 'lodash';
+//import _ from 'lodash';
 import { cube } from './math.js';
 import './style.sass';
 import Icon from './build.svg';
